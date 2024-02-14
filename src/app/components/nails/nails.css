@@ -1,0 +1,28 @@
+.nails {
+  padding: 0 24px;
+}
+.nails--title {
+  justify-content: center;
+}
+.nail-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.nail-image {
+  width: 50%;
+  height: auto;
+}
+.btn {
+  margin: 24px auto;
+}
+@media(min-width: 500px) {
+  .nail-image {
+    width: 33.33%;
+  }
+}
+@media(min-width: 1000px) {
+  .nail-image {
+    width: 25%;
+  }
+}

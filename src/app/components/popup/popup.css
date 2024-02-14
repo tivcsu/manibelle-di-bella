@@ -1,0 +1,23 @@
+.popup {
+  z-index: 101;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 150px;
+  background: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  box-shadow: 0px 4px 12px rgba(#111111, .2);
+}
+.popup__text {
+  font-size: 16px;
+}
+.btn {
+  min-width: 150px;
+}
