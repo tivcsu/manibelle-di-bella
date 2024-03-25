@@ -1,0 +1,50 @@
+{
+  "navbar_home": "Home",
+  "navbar_about": "About",
+  "navbar_contact": "Contact",
+
+  "header_welcome": "Welcome to ",
+  "header_subtitle": "Where Art Meets Your Nails",
+  "header_text": "Manibelle is where style meets substance. Immerse yourself in a world of glamour, sophistication, and creativity. Elevate your nails, elevate yourself.",
+
+  "book_appointment": "Book an appointment",
+  "follow_us": "Follow us",
+  "check_instagram": "Check Instagram",
+
+  "about_about_me_title": "About me",
+  "about_about_me_text": "I am Izabella Latorovszki and I have been practicing the art of artificial nail building since 2007. For me, this has always been more than just work. I believe that artificial nails, besides enhancing the aesthetics of the hand, aid in self-expression and accentuate the femininity within you.",
+  "about_about_manibelle_title": "About Manibelle",
+  "about_about_manibelle_text": "At Manibelle, we believe that beauty lies in the details. Our journey began with a passion for nail artistry, a commitment to quality, and a desire to create a sanctuary where clients can escape the ordinary and embrace the extraordinary.",
+  "about_client_centric_care_title": "Client-Centric Care",
+  "about_client_centric_care_text": "Your comfort and satisfaction are at the heart of everything we do. Our personalized approach ensures that each visit to Manibelle is a tailored experience, leaving you feeling pampered and refreshed.",
+  "about_elevate_your_style_title": "Elevate Your Style",
+  "about_elevate_your_style_text": "Whether you're seeking a chic, minimalist look or a bold, statement-making design, Manibelle is here to bring your vision to life. Let your nails be the canvas that tells your story.",
+
+  "about_me_section1": "In 2007, I completed the basic nail technician training organized by KYLUA in Lugano, during which a wonderful world unfolded before me. I gained insight into a profession that held endless opportunities for growth and development.\n\nFollowing that, I endeavored to gain as much experience as possible and establish a stable client base. Then, in 2009, I opened my first studio in Massagno, which expanded over the years to accommodate more activities.\n\nIn addition to functioning as a studio, I also conducted professional training sessions here and became an ambassador for a Hungarian nail brand, handling its sales.\n\n",
+  "about_me_section2": "In June 2011, I attained the Master Instructor degree, and from that point forward, I increasingly focused on teaching and participating in professional competitions.\n\nIn September 2013, I achieved first place in the Division 2 Stiletto Nails category at the London Nailympics competition. For me, this achievement represented what we all desire in this profession.\n\nHowever, at this juncture, I had two options: to continue my competitive career or to pause and direct my attention towards teaching and serving clients. I chose the latter. Subsequently, I regularly organized courses, camps, and over the years, I guided hundreds of aspiring students on their journey.",
+  "about_me_section3": "At a certain point, I felt I had accomplished everything I set out to achieve in my profession, and my life reached a turning point where I yearned for something different, to unfold in a different direction. In 2020, my child was born, and in the following years, my focus was solely on her, thus my professional career took a back seat for a few years.\n\nIn 2023, I resumed my activities in Locarno, and here, I wish to continue the dream I envisioned in 2007. I want to share with my guests, who come to beautify themselves and seek relaxation, all the magic I feel when designing and creating artificial nails. Additionally, I deem it important that besides the aesthetic appearance of our nails, sufficient attention is given to the care of nails and hands. Therefore, I warmly welcome guests who are just looking for a pampering peel and massage.",
+  
+  "booking_book_now": "Book now",
+  "booking_text": "Ready to experience the artistry of Manibelle? Schedule your appointment now and let me create a masterpiece with your nails. Please select your preferred date and time, and we`ll ensure your visit is nothing short of extraordinary. Or send us a text on WhatsApp.",
+  "booking_successful": "Successful booking!",
+  "booking_failed": "Booking failed, please try again!",
+  "booking_user_details_title": "Data required for booking",
+  "booking_user_details_lastname": "Last name",
+  "booking_user_details_firstname": "First name",
+  "booking_user_details_phonenumber": "Phone number",
+  "booking_user_details_email": "Email address",
+  "booking_user_details_comment": "Comment",
+
+  "booking_user_details_lastname_error": "Please enter your last name!",
+  "booking_user_details_firstname_error": "Please enter your first name!",
+  "booking_user_details_phonenumber_error": "Please enter a valid phone number!",
+  "booking_user_details_email_error": "Please enter a valid email!",
+
+  "booking_booking": "Booking",
+
+  "confirm": "Confirm",
+  "next": "Next",
+  "back": "Back",
+  "read_my_story": "Read my story",
+  "hide_my_story": "Hide my story"
+}

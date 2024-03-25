@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ContentWrapper } from '../content-wrapper/content-wrapper';
 import './booking.css';
 import DateSelector, { Value } from './date-selector';
@@ -8,8 +9,12 @@ import UserDetails from './user-details';
 import Popup from '../popup/popup';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/firebase.config';
+import { LangContext } from '@/app/layout';
+import { cormorantGaramond } from '@/styles/fonts';
 
 export default function Booking() {
+  const lang = useContext(LangContext)
+
   const [selectedDate, setSelectedDate] = useState(new Date())
   const [selectedTime, setSelectedTime] = useState<null | string>(null)
   const [isDateSelectionAvailable, setIsDateSelectionAvailable] = useState<boolean>(true)
@@ -61,7 +66,7 @@ export default function Booking() {
     setIsDateSelectionAvailable(true)
   }
   return (
-    <div className='booking'>
+    <div className='booking' id='contact'>
       <ContentWrapper className='booking-wrapper'>
         <div className="booking-col">
           <div className="images-wrapper">
@@ -70,20 +75,20 @@ export default function Booking() {
           </div>
         </div>
         <div className="booking-col">
-          <div className="title booking--title">Book now</div>
+          <div className="title booking--title">{lang.booking_book_now}</div>
           <div className="text booking--text">
-            Ready to experience the artistry of Manibelle? 
-            Schedule your appointment now and let me create a masterpiece with your nails. 
-            Please select your preferred date and time, 
-            and we`ll ensure your visit is nothing short of extraordinary.
+            {lang.booking_text}
+          </div>
+          <div className='phone-number-wrapper'>
+            WhatsApp: <p className="phone-number">+41 78 911 9807</p>
           </div>
           {isDateSelectionAvailable ?
             <DateSelector bookings={bookings ?? []} onSelectTime={handleSelectTime}/> :
             <UserDetails onBooking={handleBooking} onBack={handleBackToDateSelector} date={selectedDate} time={selectedTime ?? ''}/>
           }
           {bookingStatus && <div className='overlay'></div>}
-          {bookingStatus === 'success' && <Popup text={'Successful booking!'} onConfirm={handleSuccessConfirm}/>}
-          {bookingStatus === 'failed' && <Popup text={'Booking failed, please try again!'} onConfirm={handleFailureConfirm}/>}
+          {bookingStatus === 'success' && <Popup text={lang.booking_successful} onConfirm={handleSuccessConfirm}/>}
+          {bookingStatus === 'failed' && <Popup text={lang.booking_failed} onConfirm={handleFailureConfirm}/>}
         </div>
       </ContentWrapper>
     </div>

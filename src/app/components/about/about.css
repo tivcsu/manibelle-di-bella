@@ -1,9 +1,36 @@
 .about {
-  padding: 0 12px;
   background-color: #E0CDAF;
 }
 .about-section {
   margin-bottom: 24px;
+  padding: 0 12px;
+}
+.about .button-row .btn {
+  margin: 48px auto;
+}
+.about .button-row .btn--outline {
+  margin: 0 auto;
+}
+.about .about-me {
+  background: #C4AC8A;
+  max-height: 3000px;
+  opacity: 1;
+  padding-bottom: 64px;
+  transition: all ease .5s;
+}
+.about .about-me.collapsed {
+  background: #C4AC8A;
+  max-height: 0px;
+  padding-bottom: 0px;
+  opacity: 0;
+}
+.about .about-me .texts-wrapper {
+  margin-top: 32px;
+  color: white;
+  padding: 24px 12px;
+}
+.about .about-me .text {
+  white-space: break-spaces;
 }
 .title {
   padding-top: 48px;
@@ -19,7 +46,7 @@
 }
 .text {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 24px;
 }
 .image {
@@ -29,6 +56,10 @@
   margin-left: auto;
   box-shadow: 2px 0px 12px rgba(0, 0, 0, .25);
   border-radius: 8px;
+  object-fit: cover;
+}
+.image-mid {
+  margin: 0 auto;
 }
 
 @media(min-width: 750px) {
@@ -48,7 +79,6 @@
     margin-top: -30px;
     margin-left: auto;
     margin-right: 0;
-    object-fit: cover;
   }
   .image.last {
     margin-top: 0;
@@ -57,5 +87,11 @@
   .reverse .image {
     margin-left: 0;
     margin-right: auto;
+  }
+  .about .button-row .btn {
+    margin: 0;
+  }
+  .about .button-row .btn--outline {
+    margin: 0 auto;
   }
 }

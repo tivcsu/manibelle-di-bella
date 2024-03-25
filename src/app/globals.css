@@ -1,9 +1,11 @@
 :root {
   --max-width: 1100px;
-  --navbar-height: 60px;
+  --navbar-height: 80px;
+  --navbar-height-mobile: 60px;
+
 
   --primary-color: #FFFDED;
-  --secondary-color: #023047;
+  --secondary-color: #3A5A40;
   --alternative-color: #E0CDAF;
 
 }
@@ -12,6 +14,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -40,11 +43,31 @@ main {
   padding-top: 60px;
 }
 
+.lang-btn {
+  transition: all ease .3s;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  opacity: 1;
+}
+.lang-btn:hover {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 .btn {
   background-color: var(--secondary-color);
   color: white;
   height: 50px;
-  width: 200px;
+  width: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,12 +129,46 @@ main {
   text-transform: uppercase;
   font-size: 18px;
   list-style-type: none;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  transition: all ease .3s;
+}
+.navbar-menu__item:hover {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .navbar__menu-button {
   display: none;
 }
 
+.navbar-separator {
+  height: 30px;
+  margin: auto;
+  border-right: 1px solid var(--secondary-color);
+}
+
 @media(max-width: 600px) {
+  .navbar-separator {
+    height: 0;
+    width: 60%;
+    margin: 0;
+    border-top: 1px solid var(--secondary-color);
+  }
+  .navbar-wrapper {
+    height: var(--navbar-height-mobile);
+  }
+  .navbar-logo__image {
+    width: 100px;
+    height: 40px;
+  }
   .navbar-menu {
     position: fixed;
     display: flex;

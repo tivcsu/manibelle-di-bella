@@ -1,5 +1,6 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { LangContext } from '@/app/layout';
+import { useContext, useEffect, useState } from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 
@@ -19,6 +20,8 @@ interface IProps {
 }
 
 const DateSelector = ({appointment, bookings, onSelectTime}: IProps) => {
+  const lang = useContext(LangContext)
+
   const [selectedDate, setSelectedDate] = useState<Value>(getNextAvailableDate())
   const [selectedTime, setSelectedTime] = useState<null | string>(null)
   const [availableTimes, setAvailableTimes] = useState<Date[]>([])
@@ -85,7 +88,7 @@ const DateSelector = ({appointment, bookings, onSelectTime}: IProps) => {
           value={selectedDate}
           onChange={onSelectDate}
           tileDisabled={({ activeStartDate, date, view }) => disableWeekends(date)}
-          locale='hu-HU'
+          locale={lang.selectedLang === 'IT' ? 'it-IT' : 'en-EN'}
           minDate={new Date()
         }/>
         </div>
@@ -109,7 +112,7 @@ const DateSelector = ({appointment, bookings, onSelectTime}: IProps) => {
           className={`btn booking--btn ${isNextAvailable ? '' : ' hidden'}`}
           onClick={handleNextClick}
         >
-          Next
+          {lang.next}
         </button>  
     </div>
   )

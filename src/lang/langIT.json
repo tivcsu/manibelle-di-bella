@@ -1,0 +1,46 @@
+{
+  "navbar_home": "Home",
+  "navbar_about": "Chi siamo",
+  "navbar_contact": "Contatti",
+
+  "header_welcome": "Benvenuti a ",
+  "header_subtitle": "Dove l'arte incontra le unghie",
+  "header_text": "Manibelle è il luogo in cui lo stile incontra la sostanza. Immergetevi in un mondo di glamour, raffinatezza e creatività. Elevate le vostre unghie, elevate voi stesse.",
+
+  "book_appointment": "Prenota un appuntamento",
+  "follow_us": "Seguici",
+  "check_instagram": "Scopri il nostro Instagram",
+
+  "about_about_me_title": "Su di me",
+  "about_about_manibelle_title": "A Proposito di Manibelle",
+  "about_about_manibelle_text": "Noi di Manibelle crediamo che la bellezza stia nei dettagli. Il nostro viaggio è iniziato con la passione per l'arte delle unghie, l'impegno per la qualità e il desiderio di creare un santuario dove i clienti possano sfuggire all'ordinario e abbracciare lo straordinario.",
+  "about_client_centric_care_title": "Un'assistenza incentrata sulla cliente",
+  "about_client_centric_care_text": "Il vostro comfort e la vostra soddisfazione sono al centro di tutto ciò che facciamo. Il nostro approccio personalizzato assicura che ogni visita a Manibelle sia un'esperienza su misura, che vi farà sentire coccolate e riposate.",
+  "about_elevate_your_style_title": "Elevare il vostro stile",
+  "about_elevate_your_style_text": "Che siate alla ricerca di un look chic e minimalista o di un design audace e di impatto, Manibelle è qui per dare vita alla vostra visione. Lasciate che le vostre unghie siano la tela che racconti la vostra storia.",
+
+  "booking_book_now": "Prenota ora",
+  "booking_text": "Siete pronte a sperimentare l'abilità artistica di Manibelle? Fissate subito il vostro appuntamento e lasciate che crei un capolavoro con le vostre unghie. Selezionate la data e l'ora che preferite e faremo in modo che la vostra visita sia a dir poco straordinaria. Oppure inviaci un messaggio su WhatsApp.",
+  "booking_successful": "La tua prenotazione è andata a buon fine!",
+  "booking_failed": "Prenotazione fallita, riprova!",
+
+  "booking_user_details_title": "Dati obbligatori per la prenotazione",
+  "booking_user_details_lastname": "Cognome",
+  "booking_user_details_firstname": "Nome di battesimo",
+  "booking_user_details_phonenumber": "Numero di telefono",
+  "booking_user_details_email": "Indirizzo e-mail",
+  "booking_user_details_comment": "Commento",
+
+  "booking_user_details_lastname_error": "Per favore inserisci il tuo cognome!",
+  "booking_user_details_firstname_error": "Per favore immettere il proprio Nome!",
+  "booking_user_details_phonenumber_error": "Si prega di inserire un numero di telefono valido!",
+  "booking_user_details_email_error": "Inserisci una email valida!",
+
+  "booking_booking": "Prenotazione",
+
+  "confirm": "Ok",
+  "next": "Prossimo",
+  "back": "Indietro",
+  "read_my_story": "Leggi la mia storia",
+  "hide_my_story": "Nascondi la mia storia"
+}

@@ -1,11 +1,12 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './user-details.css'
 import { db } from '@/firebase.config'
 import { addDoc, collection } from 'firebase/firestore'
 import Spinner from '../spinner/spinner'
-//import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser'
 import { IAppointment } from './date-selector'
+import { LangContext } from '@/app/layout'
 
 interface IProps {
   appointment?: IAppointment
@@ -35,6 +36,8 @@ interface IErrors {
 }
 
 const UserDetails = ({onBooking, onBack, appointment, date, time}: IProps) => {
+  const lang = useContext(LangContext)
+
   const [userDetails, setUserDetails] = useState<IUserDetails>({} as IUserDetails)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<IErrors>({} as IErrors)
@@ -109,52 +112,58 @@ const UserDetails = ({onBooking, onBack, appointment, date, time}: IProps) => {
       customer_phone: userDetails.phoneNumber,
       customer_email: userDetails.email,
       booking_date: `${date.toISOString().slice(0, 10)} - ${time}`,
-      booking_appointment: 'appointment.title',
       booking_comment: userDetails.comment
     }
-    // emailjs.send('booking_email_gmail', 'new_booking', templateParams, 'ps1Ab9mdYE4eeMwip')
+    emailjs.init({
+      publicKey: 'v6mw5OU5p-iH9HzQY',
+      limitRate: {
+        // Set the limit rate for the application
+        id: 'app',
+        // Allow 1 request per 10s
+        throttle: 10000,
+      },
+    });
+    emailjs.send('service_l7z1zxa', 'template_gim4cnu', templateParams)
   }
  
   return (
     <div className="user-details-wrapper container">
     <div className='appointment-user-details'>
       <div className="appointment-details">
+        <button className='btn booking--btn top-margin' onClick={() => onBack()}>{lang.back}</button>
         <div className="appointment-details__date">{date.toDateString()}</div>
-        <div className="appointment-details__appointment-type">{'appointment.title'}</div>
         <div className="appointment-details__time">{time}</div>
-        <div className="appointment-details__appointment-duration">{'appointment.duration'}</div>
-        <button className='btn booking--btn top-margin' onClick={() => onBack()}>{'Back'}</button>
       </div>
       
       <div className="user-details">
-        <p className="user-details__title">{'Data required for booking'}</p>
+        <p className="user-details__title">{lang.booking_user_details_title}</p>
         <div className="user-detail">
-          <div className="user-detail__title">{'Last name'}</div>
-          <input className={`${error.lastName ? 'error' : ''} cap`} type="text" placeholder={'Last name'} onChange={(e) => setUserDetails({...userDetails, lastName: e.target.value.toUpperCase()})}/>
-          <p className={`user-detail__error ${error.lastName ? '' : 'hidden'}`}>{'Please enter your last name!'}</p>
+          <div className="user-detail__title">{lang.booking_user_details_lastname}</div>
+          <input className={`${error.lastName ? 'error' : ''} cap`} type="text" placeholder={lang.booking_user_details_lastname} onChange={(e) => setUserDetails({...userDetails, lastName: e.target.value.toUpperCase()})}/>
+          <p className={`user-detail__error ${error.lastName ? '' : 'hidden'}`}>{lang.booking_user_details_lastname_error}</p>
         </div>
         <div className="user-detail">
-          <div className="user-detail__title">{'First name'}</div>
-          <input className={`${error.firstName ? 'error' : ''} cap`} type="text" placeholder={'First name'} onChange={(e) => setUserDetails({...userDetails, firstName: e.target.value.toUpperCase()})}/>
-          <p className={`user-detail__error ${error.firstName ? '' : 'hidden'}`}>{'Please enter your first name!'}</p>
+          <div className="user-detail__title">{lang.booking_user_details_firstname}</div>
+          <input className={`${error.firstName ? 'error' : ''} cap`} type="text" placeholder={lang.booking_user_details_firstname} onChange={(e) => setUserDetails({...userDetails, firstName: e.target.value.toUpperCase()})}/>
+          <p className={`user-detail__error ${error.firstName ? '' : 'hidden'}`}>{lang.booking_user_details_firstname_error}</p>
         </div>
         <div className="user-detail">
-          <div className="user-detail__title">{'Phone number'}</div>
-          <input className={`${error.phoneNumber ? 'error' : ''}`} type="tel" placeholder={'Phone number'} onChange={(e) => setUserDetails({...userDetails, phoneNumber: e.target.value})}/>
-          <p className={`user-detail__error ${error.phoneNumber ? '' : 'hidden'}`}>{'Please enter a valid phone number'}</p>
+          <div className="user-detail__title">{lang.booking_user_details_phonenumber}</div>
+          <input className={`${error.phoneNumber ? 'error' : ''}`} type="tel" placeholder={lang.booking_user_details_phonenumber} onChange={(e) => setUserDetails({...userDetails, phoneNumber: e.target.value})}/>
+          <p className={`user-detail__error ${error.phoneNumber ? '' : 'hidden'}`}>{lang.booking_user_details_phonenumber_error}</p>
         </div>
         <div className="user-detail">
-          <div className="user-detail__title">Email</div>
-          <input className={`${error.email ? 'error' : ''}`} type="email" placeholder={'Email address'} onChange={(e) => setUserDetails({...userDetails, email: e.target.value})}/>
-          <p className={`user-detail__error ${error.email ? '' : 'hidden'}`}>{'Please enter a valid email!'}</p>
+          <div className="user-detail__title">{lang.booking_user_details_email}</div>
+          <input className={`${error.email ? 'error' : ''}`} type="email" placeholder={lang.booking_user_details_email} onChange={(e) => setUserDetails({...userDetails, email: e.target.value})}/>
+          <p className={`user-detail__error ${error.email ? '' : 'hidden'}`}>{lang.booking_user_details_email_error}</p>
         </div>
         <div className="user-detail">
-          <div className="user-detail__title">{'Comment'}</div>
+          <div className="user-detail__title">{lang.booking_user_details_comment}</div>
           <input type="text"onChange={(e) => setUserDetails({...userDetails, comment: e.target.value})}/>
         </div>
         
         <button className='btn booking--btn' onClick={handleBooking}>
-          {isLoading ? <Spinner /> : ('Booking')}
+          {isLoading ? <Spinner /> : (lang.booking_booking)}
         </button>
       </div>
     </div>

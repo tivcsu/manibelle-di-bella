@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { cormorantGaramond, cocoGothic } from "../styles/fonts"
+import { cocoGothic } from "../styles/fonts"
 import './page.css'
 import Header from './components/header'
 import About from './components/about/about'

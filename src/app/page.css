@@ -75,7 +75,6 @@
   .header {
     padding-top: 50px;
     text-align: left;
-    height: 90vh;
   }
   .header__title-linebreak {
     display: none;
@@ -93,7 +92,7 @@
     margin: 0;
   }
   .header__images {
-    height: unset;
+    height: 400px;
     max-width: unset;
     margin: 0;
   }
