@@ -4,13 +4,12 @@ import { useContext, useEffect, useState } from 'react';
 import { ContentWrapper } from '../content-wrapper/content-wrapper';
 import './booking.css';
 import DateSelector, { Value } from './date-selector';
-import Image from 'next/image';
 import UserDetails from './user-details';
 import Popup from '../popup/popup';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/firebase.config';
 import { LangContext } from '@/app/layout';
-import { cormorantGaramond } from '@/styles/fonts';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function Booking() {
   const lang = useContext(LangContext)
@@ -22,6 +21,9 @@ export default function Booking() {
   const [bookings, setBookings] = useState<string[] | null>(null)
 
   const appointmentsCollectionRef = collection(db, 'appointments')
+
+  const router = useRouter()
+  const searchParams = useSearchParams()
 
   useEffect(() => {
     if (bookings === null) {
@@ -57,6 +59,7 @@ export default function Booking() {
     setBookingStatus(null)
     setIsDateSelectionAvailable(true)
     getBookings()
+    router.push('/?' + searchParams)
   }
   const handleFailureConfirm = () => {
     setSelectedTime(null)
@@ -69,16 +72,7 @@ export default function Booking() {
     <div className='booking' id='contact'>
       <ContentWrapper className='booking-wrapper'>
         <div className="booking-col">
-          <div className="images-wrapper">
-            <Image className='booking-image bottom' src='/about2.jpg' width={1000} height={2000} alt='Manibelle'/>
-            <Image className='booking-image top' src='/booking-image.jpg' width={1000} height={2000} alt='Manibelle'/>
-          </div>
-        </div>
-        <div className="booking-col">
-          <div className="title booking--title">{lang.booking_book_now}</div>
-          <div className="text booking--text">
-            {lang.booking_text}
-          </div>
+          <div className="title booking--title">{lang.online_appointment_booking}</div>
           <div className='phone-number-wrapper'>
             WhatsApp: <p className="phone-number">+41 78 911 9807</p>
           </div>

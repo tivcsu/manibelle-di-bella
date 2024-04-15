@@ -11,30 +11,10 @@
 .about .button-row .btn--outline {
   margin: 0 auto;
 }
-.about .about-me {
-  background: #C4AC8A;
-  max-height: 3000px;
-  opacity: 1;
-  padding-bottom: 64px;
-  transition: all ease .5s;
-}
-.about .about-me.collapsed {
-  background: #C4AC8A;
-  max-height: 0px;
-  padding-bottom: 0px;
-  opacity: 0;
-}
-.about .about-me .texts-wrapper {
-  margin-top: 32px;
-  color: white;
-  padding: 24px 12px;
-}
-.about .about-me .text {
-  white-space: break-spaces;
-}
 .title {
   padding-top: 48px;
   display: flex;
+  align-items: center;
   gap: 10px;
   font-weight: 500;
   font-size: 30px;

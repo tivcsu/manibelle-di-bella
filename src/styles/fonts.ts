@@ -3,7 +3,7 @@ import localFont from 'next/font/local'
 
 export const cormorantGaramond = Cormorant_Garamond({
   subsets:['cyrillic'],
-  weight: '300'
+  weight: ['400', '300', '500', '600']
 })
 export const nunito = Nunito({
   weight: ['300', '400', '500', '600', '700'],

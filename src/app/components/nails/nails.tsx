@@ -16,9 +16,9 @@ export default function Nails() {
           <Image className='nail-image' key={img} src={'/nails' + img} alt={'Manibelle nail' + index} width={1200} height={2000}></Image>
         )) }
       </div>
-      <button className="btn btn--outline">
+      <a href='https://www.instagram.com/manibelle_di_bella_/' className="btn btn--outline" target='_blank'>
         {lang.check_instagram}
-      </button>
+      </a>
     </ContentWrapper>
   )
 }

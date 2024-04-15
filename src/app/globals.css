@@ -6,6 +6,7 @@
 
   --primary-color: #FFFDED;
   --secondary-color: #3A5A40;
+  --text-color: #343434;
   --alternative-color: #E0CDAF;
 
 }
@@ -25,7 +26,7 @@ body {
 
 body {
  background: var(--primary-color);
- color: var(--secondary-color);
+ color: var(--text-color);
  min-height: 100vh;
 }
 button {
@@ -40,7 +41,7 @@ p {
   margin: 0;
 }
 main {
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 .lang-btn {
@@ -74,10 +75,19 @@ main {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0px 8px;
+  text-align: center;
   transition: all ease .3s;
 }
 .btn:hover {
   opacity: .8;
+}
+.btn--secondary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-weight: 400;
 }
 .btn--outline {
   background-color: transparent;
@@ -138,6 +148,9 @@ main {
   padding: 4px 8px;
   transition: all ease .3s;
 }
+.navbar-menu__item.icon img{
+  display: flex;
+}
 .navbar-menu__item:hover {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -155,7 +168,7 @@ main {
   border-right: 1px solid var(--secondary-color);
 }
 
-@media(max-width: 600px) {
+@media(max-width: 800px) {
   .navbar-separator {
     height: 0;
     width: 60%;

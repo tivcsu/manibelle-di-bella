@@ -1,11 +1,10 @@
 'use client'
-import Image from 'next/image'
 import { cocoGothic } from "../styles/fonts"
 import './page.css'
 import Header from './components/header'
 import About from './components/about/about'
 import Nails from './components/nails/nails'
-import Booking from './components/booking/booking'
+import Contact from './components/contact/contact'
 
 export default function Home() {
   return (
@@ -13,7 +12,7 @@ export default function Home() {
       <Header />
       <About />
       <Nails />
-      <Booking />
+      <Contact />
     </div>
   )
 }

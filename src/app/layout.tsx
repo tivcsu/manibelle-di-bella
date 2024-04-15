@@ -4,6 +4,7 @@ import './globals.css'
 import { createContext, useCallback, useEffect, useState } from 'react'
 import { cocoGothic } from "../styles/fonts"
 import { Lang, getLang } from '@/lang/get-lang'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 export const LangContext = createContext({} as Lang)
 
@@ -12,7 +13,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [selectedLang, setSelectedLang] = useState('');
+  
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const [selectedLang, setSelectedLang] = useState(searchParams.get('lang') ?? 'EN')
   const [lang, setLang] = useState({
     selectedLang: selectedLang,
     ...getLang(selectedLang)
@@ -30,6 +36,16 @@ export default function RootLayout({
     }
   }
 
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString())
+      params.set(name, value)
+ 
+      return params.toString()
+    },
+    [searchParams]
+  )
+
   const onScroll = useCallback((event: Event) => {
     event.preventDefault()
     const { scrollY } = window;
@@ -43,18 +59,15 @@ export default function RootLayout({
   }, []);
 
   const onChangeLanguage = () => {
+    router.push(pathname + '?' + createQueryString('lang', selectedLang === 'EN' ? 'IT' : 'EN'))
     setSelectedLang(selectedLang === 'EN' ? 'IT' : 'EN')
     handleMenuClick()
   }
 
   useEffect(() => {
-    const currentLang = localStorage.getItem('language')
-    if (!currentLang) {
-      localStorage.setItem('language', selectedLang)
-    } else {
-      setSelectedLang(currentLang)
+    if (!searchParams.get('lang')?.length) {
+      onChangeLanguage()
     }
-
     document.addEventListener("scroll", onScroll);
     return () => {
       document.removeEventListener("scroll", onScroll);
@@ -65,29 +78,36 @@ export default function RootLayout({
     setLang({
       selectedLang: selectedLang,
       ...getLang(selectedLang)
-    })
-    localStorage.setItem('language', selectedLang)
+    })    
   }, [selectedLang])
   return (
     <html lang="en" className={cocoGothic.className}>
       <meta name="description" content="Manibelle - Dove l'arte incontra le unghie"></meta>
       <title>Manibelle</title>
-      <LangContext.Provider value={lang}>
+      <LangContext.Provider value={lang as any}>
         <body>
         <div className="navbar-wrapper">
           <nav className='navbar'>
-            <div className="navbar-logo">
+            <a href={'/?' + searchParams} className="navbar-logo">
               <Image className="navbar-logo__image" src="/manibelle-logo-black.png" alt="Manibelle Logo" width={150} height={60} loading='lazy'/>
-            </div>
+            </a>
             <ul className='navbar-menu'>
               <li className="navbar-menu__item">
-                <a href="#home" onClick={handleMenuClick}>{lang.navbar_home}</a>
+                <a href={'/?' + searchParams + "#home"} onClick={handleMenuClick}>{lang.navbar_home}</a>
               </li>
               <li className="navbar-menu__item">
-                <a href="#about-me" onClick={handleMenuClick}>{lang.navbar_about}</a>
+                <a href={'/?' + searchParams + "#about-me"} onClick={handleMenuClick}>{lang.navbar_about}</a>
               </li>
               <li className="navbar-menu__item">
-                <a href="#contact" onClick={handleMenuClick}>{lang.navbar_contact}</a>
+                <a href={'/?' + searchParams + "#contact"} onClick={handleMenuClick}>{lang.navbar_contact}</a>
+              </li>
+              <li className="navbar-menu__item">
+                <a href={"/pricing" + '?' + searchParams} onClick={handleMenuClick}>{lang.navbar_pricing}</a>
+              </li>
+              <li className="navbar-menu__item icon">
+                <a href="https://www.instagram.com/manibelle_di_bella_/" onClick={handleMenuClick} target='_blank'>
+                  <Image src="/icons/instagram.svg" alt='Manibelle on Instagram' width={20} height={20} />
+                </a>
               </li>
               <div className="navbar-separator"></div>
               <li className="navbar-menu__item lang-btn">

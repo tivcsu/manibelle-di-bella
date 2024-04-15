@@ -13,7 +13,7 @@
   width: 50%;
   height: auto;
 }
-.btn {
+.nails .btn {
   margin: 24px auto;
 }
 @media(min-width: 500px) {

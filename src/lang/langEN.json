@@ -2,13 +2,15 @@
   "navbar_home": "Home",
   "navbar_about": "About",
   "navbar_contact": "Contact",
+  "navbar_pricing": "Pricing",
 
   "header_welcome": "Welcome to ",
   "header_subtitle": "Where Art Meets Your Nails",
   "header_text": "Manibelle is where style meets substance. Immerse yourself in a world of glamour, sophistication, and creativity. Elevate your nails, elevate yourself.",
 
   "book_appointment": "Book an appointment",
-  "follow_us": "Follow us",
+  "online_appointment_booking": "Online appointment booking",
+  "follow_us": "Follow me",
   "check_instagram": "Check Instagram",
 
   "about_about_me_title": "About me",
@@ -25,7 +27,7 @@
   "about_me_section3": "At a certain point, I felt I had accomplished everything I set out to achieve in my profession, and my life reached a turning point where I yearned for something different, to unfold in a different direction. In 2020, my child was born, and in the following years, my focus was solely on her, thus my professional career took a back seat for a few years.\n\nIn 2023, I resumed my activities in Locarno, and here, I wish to continue the dream I envisioned in 2007. I want to share with my guests, who come to beautify themselves and seek relaxation, all the magic I feel when designing and creating artificial nails. Additionally, I deem it important that besides the aesthetic appearance of our nails, sufficient attention is given to the care of nails and hands. Therefore, I warmly welcome guests who are just looking for a pampering peel and massage.",
   
   "booking_book_now": "Book now",
-  "booking_text": "Ready to experience the artistry of Manibelle? Schedule your appointment now and let me create a masterpiece with your nails. Please select your preferred date and time, and we`ll ensure your visit is nothing short of extraordinary. Or send us a text on WhatsApp.",
+  "booking_text": "Ready to experience the artistry of Manibelle? Schedule your appointment now and let me create a masterpiece with your nails. Please select your preferred date and time, and we`ll ensure your visit is nothing short of extraordinary. Or send me a text on WhatsApp.",
   "booking_successful": "Successful booking!",
   "booking_failed": "Booking failed, please try again!",
   "booking_user_details_title": "Data required for booking",

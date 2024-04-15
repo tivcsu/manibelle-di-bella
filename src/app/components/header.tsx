@@ -28,13 +28,13 @@ export default function Header() {
       </a>
       <div className="header__images">
         <div className="header__image-wrapper left">
-          <Image className="header__image" src="/header-image-2.png" alt="header-image-2" width={100} height={200} loading='eager'/>
+          <Image className="header__image" src="/header-image-2.png" alt="header-image-2" width={1} height={1} loading='eager' priority/>
         </div>
           <div className="header__image-wrapper main">
-          <Image className="header__image" src="/header-image-1.png" alt="header-image-1" width={100} height={200} loading='eager'/>
+          <Image className="header__image" src="/header-image-1.jpg" alt="header-image-1" width={1} height={1} loading='eager' priority/>
         </div>
         <div className="header__image-wrapper right">
-          <Image className="header__image" src="/header-image-3.png" alt="header-image-3" width={100} height={200} loading='eager'/>
+          <Image className="header__image" src="/header-image-3.jpg" alt="header-image-3" width={1} height={1} loading='eager' priority/>
         </div>
       </div>
     </ContentWrapper>

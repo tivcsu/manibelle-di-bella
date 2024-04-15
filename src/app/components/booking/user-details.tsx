@@ -106,13 +106,15 @@ const UserDetails = ({onBooking, onBack, appointment, date, time}: IProps) => {
     }
   }
 
-  const sendEmail = () => {
+  const sendEmail = async () => {
     const templateParams = {
-      customer_name: `${userDetails.lastName} ${userDetails.firstName}`,
+      customer_name: `${userDetails.firstName} ${userDetails.lastName}`,
       customer_phone: userDetails.phoneNumber,
       customer_email: userDetails.email,
       booking_date: `${date.toISOString().slice(0, 10)} - ${time}`,
-      booking_comment: userDetails.comment
+      booking_time: `${time}`,
+      booking_comment: userDetails.comment,
+      address: 'Locarno',
     }
     emailjs.init({
       publicKey: 'v6mw5OU5p-iH9HzQY',
@@ -123,7 +125,8 @@ const UserDetails = ({onBooking, onBack, appointment, date, time}: IProps) => {
         throttle: 10000,
       },
     });
-    emailjs.send('service_l7z1zxa', 'template_gim4cnu', templateParams)
+    await emailjs.send('service_l7z1zxa', 'template_gim4cnu', templateParams)
+    await emailjs.send('service_l7z1zxa', 'template_58ch05h', templateParams)
   }
  
   return (
@@ -162,7 +165,7 @@ const UserDetails = ({onBooking, onBack, appointment, date, time}: IProps) => {
           <input type="text"onChange={(e) => setUserDetails({...userDetails, comment: e.target.value})}/>
         </div>
         
-        <button className='btn booking--btn' onClick={handleBooking}>
+        <button className='btn btn--secondary' onClick={handleBooking}>
           {isLoading ? <Spinner /> : (lang.booking_booking)}
         </button>
       </div>

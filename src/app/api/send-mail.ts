@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 
 export async function sendMail() {
 
-  const sendEmail = () => {
+  /*const sendEmail = () => {
     const templateParams = {
       customer_name: `${userDetails.lastName} ${userDetails.firstName}`,
       customer_phone: userDetails.phoneNumber,
@@ -16,7 +16,7 @@ export async function sendMail() {
     emailjs.send('booking_email_gmail', 'new_booking', templateParams, 'ps1Ab9mdYE4eeMwip')
   }
 
-  /*const params = {
+  const params = {
     "from": {
       "email": "manibelledibella@gmail.com",
       "name": "Manibelle di Bella"
